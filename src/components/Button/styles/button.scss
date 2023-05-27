@@ -1,0 +1,40 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-size: 14px;
+    border: 2px solid #01a7fd;
+    border-radius: 100px;
+    color: #01a7fd;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &--theme--default {
+        position: relative;
+        padding-left: 48px;
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            width: 16px;
+            height: 2px;
+            background-color: #01a7fd;
+            border-radius: 5px;
+            left: 21px;
+        }
+        &::before{
+            transform: rotate(90deg);
+        }
+    }
+
+    &--theme--blue {
+        background-color: #01a7fd;
+        color: #fff;
+    }
+
+    &--theme--simple {
+        padding: 0;
+        border: none;
+    }
+}

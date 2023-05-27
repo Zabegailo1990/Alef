@@ -1,0 +1,11 @@
+.footer{
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FAFAFA;
+
+    &__text{
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,9 @@
+.navigation {
+    display: flex;
+    column-gap: 24px;
+
+    &__link {
+        font-size: 14px;
+        color: #1111117a;
+    }
+}
