@@ -24,12 +24,8 @@
 import Input from "../Input/index.vue";
 import { ref } from "vue";
 
-const name = ref(props.item.name || '');
-const age = ref(props.item.age || '');
-
-const props = defineProps({
-    item: Object
-})
+const name = ref();
+const age = ref();
 
 const emits = defineEmits(["returnValue"]);
 

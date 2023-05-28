@@ -8,7 +8,5 @@ export const usePersonalStore = defineStore("personalStore", () => {
         personal.value = data;
     };
 
-
-
     return { getPersonal, setPersonal };
 });

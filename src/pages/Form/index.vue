@@ -4,7 +4,6 @@
             <h2 class="form__title form__title--indent">Персональные данные</h2>
             <Personal
                 class="form__personal"
-                :item="personalData"
                 @return-value="(value) => (personalData = value)"
             />
             <div class="form__row">
@@ -22,10 +21,9 @@
         <div class="form__col">
             <Child
                 class="form__child"
-                v-for="(item, index) in childrenData"
+                v-for="(_, index) in childrenData"
                 :key="childrenData[index].id"
                 :id="childrenData[index].id"
-                :item="item"
                 @return-child="(value) => (childrenData[index] = { ...value })"
                 @return-id="(id) => childrenFilter(id)"
             />
@@ -49,8 +47,8 @@ import { useChildrenStore } from "../../store/ChildrenStore";
 
 const personalStore = usePersonalStore();
 const childrenStore = useChildrenStore();
-const personalData = ref(personalStore.getPersonal);
-const childrenData = ref(childrenStore.getChild);
+const personalData = ref({});
+const childrenData = ref([]);
 
 // Условно добавляю поля (не больше 5-ти), и id
 const addChild = () => {
@@ -61,10 +59,10 @@ const addChild = () => {
 
 // Удаление полей
 const childrenFilter = (id) => {
-    const filterefChildren = childrenData.value.filter(
+    const filteredChildren = childrenData.value.filter(
         (item) => item.id !== id
     );
-    childrenData.value = [...filterefChildren];
+    childrenData.value = [...filteredChildren];
 };
 
 // Сохраняю в стор, проверяю заполнено ли имя или года, чтоб понять забыл человек заполнить или ошибочно вызвал новое поле

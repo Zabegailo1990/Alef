@@ -35,11 +35,10 @@ const childrenStore = useChildrenStore();
 
 const props = defineProps({
     id: String,
-    item: Object,
 });
 
-const name = ref(props.item?.name || '');
-const age = ref(props.item?.age || '');
+const name = ref('');
+const age = ref('');
 
 // Наименования эмитиков
 const emits = defineEmits(["returnChild", "returnId"]);
