@@ -24,8 +24,8 @@
 import Input from "../Input/index.vue";
 import { ref } from "vue";
 
-const name = ref();
-const age = ref();
+const name = ref("");
+const age = ref("");
 
 const emits = defineEmits(["returnValue"]);
 

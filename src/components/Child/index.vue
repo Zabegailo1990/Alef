@@ -4,21 +4,21 @@
             <Input
                 class="child__input"
                 label="Имя"
-                :id="`name_${id}`"
                 v-model="name"
                 @Input="valueChangeHandler"
+                :id="`name_${id}`"
             />
             <Input
                 class="child__input"
                 label="Возраст"
-                :id="`age_${id}`"
                 type="number"
                 v-model="age"
                 @Input="valueChangeHandler"
+                :id="`age_${id}`"
             />
         </div>
         <Button
-            @click="deleteItem(props.id)"
+            @click="deleteData(props.id)"
             theme="simple"
             title="Удалить"
         />
@@ -37,8 +37,8 @@ const props = defineProps({
     id: String,
 });
 
-const name = ref('');
-const age = ref('');
+const name = ref("");
+const age = ref("");
 
 // Наименования эмитиков
 const emits = defineEmits(["returnChild", "returnId"]);
@@ -49,7 +49,7 @@ const valueChangeHandler = () => {
 };
 
 // Передача id в стор и в родителя для удаления данных и поля
-const deleteItem = (id) => {
+const deleteData = (id) => {
     childrenStore.deleteChild(id);
     emits("returnId", props.id);
 };

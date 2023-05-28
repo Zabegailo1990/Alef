@@ -25,7 +25,7 @@
                 :key="childrenData[index].id"
                 :id="childrenData[index].id"
                 @return-child="(value) => (childrenData[index] = { ...value })"
-                @return-id="(id) => childrenFilter(id)"
+                @return-id="(id) => deleteChild(id)"
             />
         </div>
         <Button
@@ -58,7 +58,7 @@ const addChild = () => {
 };
 
 // Удаление полей
-const childrenFilter = (id) => {
+const deleteChild = (id) => {
     const filteredChildren = childrenData.value.filter(
         (item) => item.id !== id
     );
