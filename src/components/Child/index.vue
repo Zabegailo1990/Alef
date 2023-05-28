@@ -28,7 +28,7 @@
 <script setup>
 import Input from "../Input/index.vue";
 import Button from "../Button/index.vue";
-import { ref, defineProps } from "vue";
+import { ref } from "vue";
 import { useChildrenStore } from "../../store/ChildrenStore";
 
 const childrenStore = useChildrenStore();
