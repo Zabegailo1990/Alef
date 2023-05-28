@@ -62,7 +62,7 @@ const childrenFilter = (id) => {
     const filteredChildren = childrenData.value.filter(
         (item) => item.id !== id
     );
-    childrenData.value = [...filteredChildren];
+    childrenData.value = filteredChildren;
 };
 
 // Сохраняю в стор, проверяю заполнено ли имя или года, чтоб понять забыл человек заполнить или ошибочно вызвал новое поле
