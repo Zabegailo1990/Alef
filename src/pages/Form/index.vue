@@ -4,7 +4,7 @@
             <h2 class="form__title form__title--indent">Персональные данные</h2>
             <Personal
                 class="form__personal"
-                :item="personalData"
+                :valueFromStore="personalData"
                 @return-value="(value) => (personalData = value)"
             />
             <div class="form__row">
@@ -25,7 +25,7 @@
                 v-for="(item, index) in childrenData"
                 :key="childrenData[index].id"
                 :id="childrenData[index].id"
-                :item="item"
+                :valueFromStore="item"
                 @return-child="(value) => (childrenData[index] = { ...value })"
                 @return-id="(id) => deleteChild(id)"
             />

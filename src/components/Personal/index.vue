@@ -10,7 +10,7 @@
             />
             <Input
                 class="personal__input"
-                label="возраст"
+                label="Возраст"
                 id="Возраст"
                 type="number"
                 v-model="age"
@@ -25,11 +25,11 @@ import Input from "../Input/index.vue";
 import { ref } from "vue";
 
 const props = defineProps({
-    item: Object,
+    valueFromStore: Object,
 })
 
-const name = ref(props.item.name || '');
-const age = ref(props.item.age || '');
+const name = ref(props.valueFromStore.name || '');
+const age = ref(props.valueFromStore.age || '');
 
 const emits = defineEmits(["returnValue"]);
 

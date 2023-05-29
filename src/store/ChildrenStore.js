@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 
 export const useChildrenStore = defineStore("childrenStore", () => {
-    let child = ref([]);
+    const child = ref([]);
 
     const getChild = computed(() => child.value);
 
