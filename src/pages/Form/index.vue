@@ -49,6 +49,7 @@ import { useChildrenStore } from "../../store/ChildrenStore";
 
 const personalStore = usePersonalStore();
 const childrenStore = useChildrenStore();
+
 const personalData = ref(JSON.parse(JSON.stringify(personalStore.getPersonal)));
 const childrenData = ref(JSON.parse(JSON.stringify(childrenStore.getChild)));
 

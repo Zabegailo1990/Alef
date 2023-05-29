@@ -1,10 +1,10 @@
 <template>
     <div class="default-layout">
-        <Header class="default-layout__header"/>
+        <Header class="default-layout__header" />
         <main class="default-layout__main">
             <router-view></router-view>
         </main>
-        <Footer class="default-layout__footer"/>
+        <Footer class="default-layout__footer" />
     </div>
 </template>
 
