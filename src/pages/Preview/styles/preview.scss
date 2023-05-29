@@ -20,14 +20,11 @@
         display: flex;
         column-gap: 8px;
         width: fit-content;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        padding: 10px 20px;
         &:not(:last-child){
             margin-bottom: 20px;
-        }
-        
-        &--theme--gray {
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            padding: 10px 20px;
         }
     }
 

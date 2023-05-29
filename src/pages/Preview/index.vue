@@ -3,10 +3,8 @@
         <div class="preview__inner">
             <div class="preview__block">
                 <h2 class="preview__title">Персональные данные</h2>
-                <div class="preview__fullname">
-                    <div class="preview__item">
-                        {{ correctInfo(personalStore.getPersonal) }}
-                    </div>
+                <div class="preview__item">
+                    {{ correctInfo(personalStore.getPersonal) }}
                 </div>
             </div>
             <div class="preview__block">
