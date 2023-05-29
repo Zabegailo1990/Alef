@@ -11,7 +11,6 @@
             :id="id"
             :type="type"
             :value="modelValue"
-            :disabled="disabled"
             @input="$emit('update:modelValue', $event.target.value)"
         />
     </div>
@@ -29,7 +28,6 @@ const props = defineProps({
     },
     id: String,
     label: String,
-    disabled: Boolean,
 });
 </script>
 

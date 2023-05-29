@@ -4,6 +4,7 @@
             <h2 class="form__title form__title--indent">Персональные данные</h2>
             <Personal
                 class="form__personal"
+                :item="personalData"
                 @return-value="(value) => (personalData = value)"
             />
             <div class="form__row">
@@ -21,9 +22,10 @@
         <div class="form__col">
             <Child
                 class="form__child"
-                v-for="(_, index) in childrenData"
+                v-for="(item, index) in childrenData"
                 :key="childrenData[index].id"
                 :id="childrenData[index].id"
+                :item="item"
                 @return-child="(value) => (childrenData[index] = { ...value })"
                 @return-id="(id) => deleteChild(id)"
             />
@@ -47,8 +49,8 @@ import { useChildrenStore } from "../../store/ChildrenStore";
 
 const personalStore = usePersonalStore();
 const childrenStore = useChildrenStore();
-const personalData = ref({});
-const childrenData = ref([]);
+const personalData = ref(JSON.parse(JSON.stringify(personalStore.getPersonal)));
+const childrenData = ref(JSON.parse(JSON.stringify(childrenStore.getChild)));
 
 // Условно добавляю поля (не больше 5-ти), и id
 const addChild = () => {
